@@ -9,14 +9,17 @@ const timerDOMElement = document.getElementById("timer");
 numberDOMElement.innerHTML = numberCasual;
 
 // - Creare il timer di 30 secondi
-
-deleteDOMElementContent(numberDOMElement);
 decreasingTimer(timerDOMElement, 30);
+
 // - Cancellare i dati dopo 30 secondi
+deleteDOMElementContent(numberDOMElement);
+
 // - Inserire 5 numeti tremmite prompt
+const answer = userAnswerPromptNumber(5, 33000);
+console.log(answer);
 // - Controllare se i numeri inseriti sono correti e capire quale sono stati indovinati
 
-// FUNZIONI 
+//-------------------------FUNZIONI-----------------------------
 
 // Funzione getRandomIntInclusive - crea il numero random nel range indicato
 function getRandomIntInclusive(min, max){
@@ -59,5 +62,16 @@ function decreasingTimer(DOMElement, counterStart){
     }, 1000)
 }
 
+// Funzione per ricevere risposta di utente
+function userAnswerPromptNumber(numberPrompt, timeout){
+    const array = [];
+    setTimeout(function(){
+        for (let i = 0; i < numberPrompt; i++){
+            const answerPrompt = parseInt(prompt(`Inserisci il numero ${i + 1}`)); 
+            array.push(answerPrompt);
+        }
+    }, timeout)
+    return array;
+}
 
 
