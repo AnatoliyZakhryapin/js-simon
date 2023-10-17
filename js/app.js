@@ -1,8 +1,11 @@
 // - Visualizzare in pagina 5 numeri casuali (anche tramite alert).
-const numberCasual = randomNumberArray(1, 100, 5)
+const numberCasual = randomNumberArray(1, 100, 5);
 
 //     - Creare DOMElement per inserire i numeri
+const numberDOMElement = document.getElementById("number");
+numberDOMElement.innerHTML = numberCasual;
 // - Creare il timer di 30 secondi
+
 // - Cancellare i dati dopo 30 secondi
 // - Inserire 5 numeti tremmite prompt
 // - Controllare se i numeri inseriti sono correti e capire quale sono stati indovinati
@@ -23,5 +26,10 @@ function randomNumberArray(min, max, n){
         array.push(getRandomIntInclusive(min, max));
     }
     return array;
+}
+
+// Funzione deleteDOMElementContent 
+function deleteDOMElementContent(DOMElement){
+    DOMElement.innerHTML = "";
 }
 
