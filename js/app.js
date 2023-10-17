@@ -74,4 +74,14 @@ function userAnswerPromptNumber(numberPrompt, timeout){
     return array;
 }
 
+// Funzione per confrontare il contenuto di una array con altra e return di una array con i numeri indivinati 
+function compareArrays(array, arrayToCompare){
+    const arrayNumberWin = []
+    for(let i = 0; i < arrayToCompare.length; i++){
+        if(array.contains(arrayToCompare[i])){
+            arrayNumberWin.push(arrayToCompare[i]);
+        }
+    }
+    return arrayNumberWin;
+}
 
