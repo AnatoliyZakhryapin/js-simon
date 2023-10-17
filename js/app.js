@@ -17,12 +17,16 @@ deleteDOMElementContent(numberDOMElement);
 // - Inserire 5 numeti tremmite prompt
 const idSetTimeOut = setTimeout(function(){
     console.log(numberCasual);
+    timerDOMElement.innerHTML = "";
     const answer = userAnswerPromptNumber(5);
     numberWin = compareArrays(numberCasual, answer);
     console.log(numberWin);
-}, 32000)
+    numberWinnerPrint(numberWin, numberDOMElement);
+}, 35000)
 
 // - Controllare se i numeri inseriti sono correti e capire quale sono stati indovinati
+
+
 
 //-------------------------FUNZIONI-----------------------------
 
@@ -86,5 +90,16 @@ function compareArrays(array, arrayToCompare){
         }
     }
     return arrayNumberWin;
+}
+
+// Funzione numberWinnerPrint 
+function numberWinnerPrint(arrayNumberWin, DOMElement){
+    let messegeToPrint = `
+        Hai indovinato i numeri: ${arrayNumberWin.join(", ")}.
+        `;
+    // for(let i = 0; i < arrayNumberWin.length; i++){
+    //     messegeToPrint.padEnd(1, `${arrayNumberWin[i]}, `);
+    // }
+    DOMElement.innerHTML = messegeToPrint;
 }
 
