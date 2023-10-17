@@ -1,6 +1,6 @@
 // - Visualizzare in pagina 5 numeri casuali (anche tramite alert).
-//     - Creare array numberCasual
-//     - Creare funzione randomNumber
+const numberCasual = randomNumberArray(1, 100, 5)
+
 //     - Creare DOMElement per inserire i numeri
 // - Creare il timer di 30 secondi
 // - Cancellare i dati dopo 30 secondi
