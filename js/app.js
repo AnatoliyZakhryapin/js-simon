@@ -4,7 +4,9 @@ const numberCasual = randomNumberArray(1, 100, 5);
 //     - Creare DOMElement per inserire i numeri
 const numberDOMElement = document.getElementById("number");
 numberDOMElement.innerHTML = numberCasual;
+
 // - Creare il timer di 30 secondi
+deleteDOMElementContent(numberDOMElement);
 
 // - Cancellare i dati dopo 30 secondi
 // - Inserire 5 numeti tremmite prompt
@@ -29,7 +31,16 @@ function randomNumberArray(min, max, n){
 }
 
 // Funzione deleteDOMElementContent 
+// function deleteDOMElementContent(DOMElement){
+//     DOMElement.innerHTML = "";
+// }
+// setTimeout(deleteDOMElementContent(numberDOMElement), 5000)
+
 function deleteDOMElementContent(DOMElement){
-    DOMElement.innerHTML = "";
+    setTimeout(() => {
+        DOMElement.innerHTML = "";
+    }, 30000)
 }
+
+
 
