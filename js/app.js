@@ -1,5 +1,5 @@
 //-------------------------Variabili------------------------------
-const numberCasual = randomNumberArray(1, 100, 5);
+const numberCasual = getArrayOfRandomIntBetween(1, 100, 5);
 let numberWin = [];
 //-------------------------DOMElement-----------------------------
 const numberDOMElement = document.getElementById("number");
@@ -38,13 +38,23 @@ function getRandomIntInclusive(min, max){
 }
 
 // Funzione randomNumberArray 
-function randomNumberArray(min, max, n){
-    const array = [];
-    for (let i = 0; i < n; i++){
-        array.push(getRandomIntInclusive(min, max));
+function getArrayOfRandomIntBetween(minRange,maxRange,number){
+    const numbersArray = []; 
+
+    while(numbersArray.length < number){
+        // generare un numero random da rangeMin a rangeMAx
+        const n = getRandomIntInclusive(minRange,maxRange);
+
+        // SE n non è presente nell'array fare push di n
+        if (!numbersArray.includes(n)){
+			// pushare il numero nell'array
+			numbersArray.push(n);
+		}
     }
-    return array;
+    // return array con i numeri generati
+    return numbersArray;
 }
+
 
 // Funzione deleteDOMElementContent 
 // function deleteDOMElementContent(DOMElement){
